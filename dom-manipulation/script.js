@@ -186,6 +186,10 @@ async function syncWithServer() {
   }
 }
 
+async function syncQuotes() {
+  await syncWithServer();
+}
+
 syncWithServer();
 setInterval(syncWithServer, 30000);
 
