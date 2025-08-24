@@ -178,6 +178,9 @@ async function syncWithServer() {
   saveQuotes();
   populateCategories();
   if (categorySelect) filterQuotes(); else renderQuotes(quotes);
+
+  showNotice("Quotes synced with server!");
+
   const addedCount = serverQuotes.filter(s => !localMap.has(s.text)).length;
   const confCount  = pendingConflicts.length;
   if (addedCount || confCount) {
